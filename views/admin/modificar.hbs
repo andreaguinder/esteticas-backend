@@ -1,0 +1,76 @@
+<div class="admin-form-container">
+  <div class="admin-form-card">
+    <h2 class="admin-form-title">Modificar Servicio</h2>
+
+    <form action="/admin/servicios/modificar" method="post" enctype="multipart/form-data" class="admin-form">
+      
+      {{! Campo oculto con el ID del servicio }}
+      <input type="hidden" value="{{servicio.id}}" name="id">
+
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input 
+          type="text" 
+          class="form-input" 
+          id="nombre"
+          name="nombre" 
+          value="{{servicio.nombre}}" 
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="duracion">Duración</label>
+        <input 
+          type="text" 
+          class="form-input" 
+          id="duracion"
+          name="duracion" 
+          value="{{servicio.duracion}}" 
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="descripcion">Descripción</label>
+        <textarea 
+          class="form-textarea" 
+          id="descripcion"
+          name="descripcion" 
+          rows="4"
+        >{{servicio.descripcion}}</textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Imagen actual</label>
+        {{#if servicio.imagen}}
+          <div class="image-preview">
+            <img src="{{servicio.imagen}}" alt="Imagen actual del servicio" />
+            <label class="checkbox-delete">
+              <input type="checkbox" name="img_delete" value="1" />
+              Eliminar imagen actual
+            </label>
+          </div>
+        {{/if}}
+        
+        <input type="hidden" name="img_original" value="{{servicio.imagen_id}}" />
+        
+        <label for="imagen" class="label-file">Subir nueva imagen</label>
+        <input 
+          type="file" 
+          class="form-input" 
+          id="imagen"
+          name="imagen" 
+        />
+      </div>
+
+      <div class="form-actions">
+        <a href="/admin/servicios" class="btn-cancel">Cancelar</a>
+        <button type="submit" class="btn-submit">Modificar</button>
+      </div>
+
+      {{#if error}}
+        <p class="error-message">{{message}}</p>
+      {{/if}}
+
+    </form>
+  </div>
+</div>

@@ -1,0 +1,500 @@
+/* ==========================================================================
+   PANEL ADMIN - LOGIN
+   ========================================================================== */
+
+   body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.main-content {
+  flex: 1; /* Empuja el footer al final de la pantalla cuando hay poco contenido */
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 250px);
+  padding: 32px 16px;
+  background-color: #f8f9fa;
+}
+
+.login-wrapper {
+  background-color: #ffffff;
+  padding: 40px 32px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 420px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input {
+  padding: 14px 16px;
+  font-size: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #0ea3aa;
+  box-shadow: 0 0 0 3px rgba(14, 163, 170, 0.15);
+}
+
+.login-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #0ea3aa;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-button:hover {
+  background-color: #0b848a;
+  transform: translateY(-1px);
+}
+
+.login-button:active {
+  transform: translateY(0);
+}
+
+
+/* ==========================================================================
+   PANEL ADMIN - LISTADO DE SERVICIOS
+   ========================================================================== */
+
+   .admin-header {
+  background-color: #ffffff;
+  border-bottom: 4px solid #0EA3AA; /* Línea divisoria con tu color */
+  padding: 20px 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.admin-header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1260px;
+  margin: 0 auto;
+}
+
+.admin-logo-img {
+  width: 250px;
+  height: auto;
+  display: block;
+}
+
+.admin-services-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Fila Superior: Saludo y Logout */
+.admin-header-row {
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 16px;
+}
+
+.admin-user-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.admin-welcome-text {
+  font-size: 16px;
+  color: #333333;
+}
+
+.admin-username {
+  font-weight: 700;
+  color: #0ea3aa;
+}
+
+.btn-logout {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background-color: #dc3545;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.btn-logout:hover {
+  background-color: #bb2d3b;
+}
+
+/* Fila Acciones: Título y Botón Agregar */
+.admin-actions-row {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.admin-page-title {
+  font-size: 24px;
+  color: #222222;
+}
+
+.btn-add-service {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background-color: #198754;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.btn-add-service:hover {
+  background-color: #157347;
+}
+
+/* Tabla de Servicios */
+.admin-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eef0f2;
+}
+
+.services-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.services-table th,
+.services-table td {
+  padding: 16px;
+  vertical-align: middle;
+}
+
+.table-header-row {
+  background-color: #0ea3aa;
+  color: #ffffff;
+}
+
+.table-header-row th {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.table-body-row {
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s ease;
+}
+
+.table-body-row:last-child {
+  border-bottom: none;
+}
+
+.table-body-row:hover {
+  background-color: #f8fdfd;
+}
+
+/* Definición de Anchos y Celdas */
+.col-id, .cell-id {
+  width: 60px;
+  text-align: center;
+  color: #666666;
+}
+
+.cell-title {
+  font-size: 16px;
+  color: #333333;
+  font-weight: 700;
+}
+
+.col-actions, .cell-actions {
+  width: 140px;
+  text-align: right;
+}
+
+.cell-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.btn-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.btn-action:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+
+.btn-edit {
+  background-color: #6c757d;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+}
+
+.site-footer {
+  background-color: #0EA3AA;
+  color: #ffffff;
+  padding: 20px 16px;
+  margin-top: 40px;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.footer-copy, 
+.footer-author {
+  margin: 0;
+}
+
+.footer-author a {
+  color: #ffffff;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.footer-author a:hover {
+  opacity: 0.9;
+}
+
+/* ==========================================================================
+   RESPONSIVE (DESKTOP >= 768px)
+   ========================================================================== */
+
+   /* ==========================================================================
+   FORMULARIO AGREGAR SERVICIO
+   ========================================================================== */
+
+.admin-form-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.admin-form-card {
+  background-color: #ffffff;
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eef0f2;
+}
+
+.admin-form-title {
+  font-size: 22px;
+  color: #222222;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-input,
+.form-textarea {
+  padding: 12px 16px;
+  font-size: 15px;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #0EA3AA;
+  box-shadow: 0 0 0 3px rgba(14, 163, 170, 0.15);
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.btn-cancel {
+  padding: 12px 20px;
+  background-color: #e4e6eb;
+  color: #444444;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  transition: background-color 0.2s ease;
+}
+
+.btn-cancel:hover {
+  background-color: #d8dadf;
+}
+
+.btn-submit {
+  padding: 12px 24px;
+  background-color: #0EA3AA;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-submit:hover {
+  background-color: #0b848a;
+}
+
+.error-message {
+  margin-top: 16px;
+  padding: 12px;
+  background-color: #f8d7da;
+  color: #842029;
+  border: 1px solid #f5c2c7;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ==========================================================================
+   VISTA PREVIA Y MANEJO DE IMAGEN EN MODIFICAR
+   ========================================================================== */
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.image-preview {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+  padding: 8px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  border: 1px dashed #dcdcdc;
+}
+
+.image-preview img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.checkbox-delete {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #dc3545;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.label-file {
+  margin-top: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .admin-services-container {
+    padding: 48px 20px;
+  }
+
+  .admin-actions-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .admin-page-title {
+    font-size: 28px;
+  }
+
+  .btn-add-service {
+    width: auto;
+  }
+
+  .admin-logo-img {
+    width: 280px;
+  }
+
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

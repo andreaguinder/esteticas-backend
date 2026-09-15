@@ -1,0 +1,78 @@
+<div class="admin-services-container">
+
+
+  <div class="admin-header-row">
+    <div class="admin-user-info">
+      <p class="admin-welcome-text">
+        Hola <span class="admin-username">{{usuario}}</span>!
+      </p>
+      <a class="btn-logout" href="/admin/login/logout">
+        Cerrar sesión <i class="fas fa-sign-out-alt"></i>
+      </a>
+    </div>
+  </div>
+
+
+  <div class="admin-actions-row">
+    <div class="admin-title-col">
+      <h3 class="admin-page-title">Listado de Servicios</h3>
+    </div>
+    <div class="admin-btn-col">
+      <a href="/admin/servicios/agregar" class="btn-add-service">
+        <i class="fa fa-plus" aria-hidden="true"></i> Nuevo Servicio
+      </a>
+    </div>
+  </div>
+
+
+  <div class="admin-table-wrapper">
+    <table class="services-table">
+      <thead>
+        <tr class="table-header-row">
+          <th scope="col" class="col-id">#</th>
+          <th scope="col" class="col-image">Imagen</th>
+          <th scope="col" className="col-title">Título del Servicio</th>
+          <th scope="col" class="col-desc">Descripción</th>
+          <th scope="col" class="col-duration">Duración</th>
+
+          <th scope="col" class="col-actions">Acciones</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {{#each servicios}}
+        <tr class="table-body-row">
+          <th scope="row" class="cell-id">{{id}}</th>
+          <td class="cell-image">
+  {{#if imagen}}
+    <img src="{{imagen}}" alt="{{nombre}}" width="80" height="80" style="object-fit: cover; border-radius: 6px;" />
+  {{else}}
+    <span class="no-img">Sin imagen</span>
+  {{/if}}
+</td>
+          <td class="cell-title">{{nombre}}</td>
+          <td class="cell-desc">{{descripcion}}</td>
+          <td class="cell-duration">{{duracion}}</td>
+          <td class="cell-actions">
+            <a 
+              class="btn-action btn-edit" 
+              href="/admin/servicios/modificar/{{id}}" 
+              title="Modificar"
+            >
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            </a>
+            <a 
+              class="btn-action btn-delete" 
+              href="/admin/servicios/eliminar/{{id}}" 
+              title="Eliminar"
+            >
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </a>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+
+</div>

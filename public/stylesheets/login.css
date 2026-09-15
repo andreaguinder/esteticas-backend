@@ -1,0 +1,279 @@
+/* ==========================================================================
+   PANEL ADMIN - LOGIN
+   ========================================================================== */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 250px);
+  padding: 32px 16px;
+  background-color: #f8f9fa;
+}
+
+.login-wrapper {
+  background-color: #ffffff;
+  padding: 40px 32px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 420px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input {
+  padding: 14px 16px;
+  font-size: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #0ea3aa;
+  box-shadow: 0 0 0 3px rgba(14, 163, 170, 0.15);
+}
+
+.login-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #0ea3aa;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-button:hover {
+  background-color: #0b848a;
+  transform: translateY(-1px);
+}
+
+.login-button:active {
+  transform: translateY(0);
+}
+
+
+/* ==========================================================================
+   PANEL ADMIN - LISTADO DE SERVICIOS
+   ========================================================================== */
+
+.admin-services-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Fila Superior: Saludo y Logout */
+.admin-header-row {
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 16px;
+}
+
+.admin-user-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.admin-welcome-text {
+  font-size: 16px;
+  color: #333333;
+}
+
+.admin-username {
+  font-weight: 700;
+  color: #0ea3aa;
+}
+
+.btn-logout {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background-color: #dc3545;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.btn-logout:hover {
+  background-color: #bb2d3b;
+}
+
+/* Fila Acciones: Título y Botón Agregar */
+.admin-actions-row {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.admin-page-title {
+  font-size: 24px;
+  color: #222222;
+}
+
+.btn-add-service {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background-color: #198754;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.btn-add-service:hover {
+  background-color: #157347;
+}
+
+/* Tabla de Servicios */
+.admin-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eef0f2;
+}
+
+.services-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.services-table th,
+.services-table td {
+  padding: 16px;
+  vertical-align: middle;
+}
+
+.table-header-row {
+  background-color: #0ea3aa;
+  color: #ffffff;
+}
+
+.table-header-row th {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.table-body-row {
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s ease;
+}
+
+.table-body-row:last-child {
+  border-bottom: none;
+}
+
+.table-body-row:hover {
+  background-color: #f8fdfd;
+}
+
+/* Definición de Anchos y Celdas */
+.col-id, .cell-id {
+  width: 60px;
+  text-align: center;
+  color: #666666;
+}
+
+.cell-title {
+  font-size: 16px;
+  color: #333333;
+  font-weight: 700;
+}
+
+.col-actions, .cell-actions {
+  width: 140px;
+  text-align: right;
+}
+
+.cell-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.btn-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.btn-action:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+
+.btn-edit {
+  background-color: #6c757d;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+}
+
+
+/* ==========================================================================
+   RESPONSIVE (DESKTOP >= 768px)
+   ========================================================================== */
+
+@media screen and (min-width: 768px) {
+  .admin-services-container {
+    padding: 48px 20px;
+  }
+
+  .admin-actions-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .admin-page-title {
+    font-size: 28px;
+  }
+
+  .btn-add-service {
+    width: auto;
+  }
+}

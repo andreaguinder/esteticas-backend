@@ -1,0 +1,58 @@
+<div class="admin-form-container">
+  <div class="admin-form-card">
+    <h3 class="admin-form-title">Agregar nuevo servicio</h3>
+
+    <form action="/admin/servicios/agregar" method="post" enctype="multipart/form-data" class="admin-form">
+      <div class="form-group">
+        <input 
+          type="text" 
+          class="form-input" 
+          placeholder="Nombre del servicio (ej: Crioterapia Facial)" 
+          name="nombre"
+          required
+        />
+      </div>
+
+<div class="form-group">
+        <label for="imagen" class="form-label">Imagen ilustrativa</label>
+        <input 
+          type="file" 
+          class="form-input-file" 
+          id="imagen"
+          name="imagen"
+        />
+      </div>
+
+      <div class="form-group">
+        <textarea 
+          class="form-textarea" 
+          placeholder="Descripción del servicio..." 
+          name="descripcion"
+          rows="4"
+          required
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <input 
+          type="text" 
+          class="form-input" 
+          placeholder="Duración (ej: 45 min.)" 
+          name="duracion"
+          required
+        />
+      </div>
+
+
+
+      <div class="form-actions">
+        <a href="/admin/servicios" class="btn-cancel">Cancelar</a>
+        <button type="submit" class="btn-submit">Guardar Servicio</button>
+      </div>
+    </form>
+
+    {{#if error}}
+      <p class="error-message">{{message}}</p>
+    {{/if}}
+  </div>
+</div>
