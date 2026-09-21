@@ -5,6 +5,17 @@ var cloudinary = require("cloudinary").v2;
 var nodemailer = require('nodemailer');
 
 
+// agrego un ping para verificar que el backend y la base de datos estén activos, para trabajar con cronjob
+router.get('/ping', async function(req, res, next) {
+  try {
+    await serviciosModel.getServicios();
+    res.status(200).json({ status: 'ok', message: 'Backend y DB activos' });
+  } catch (error) {
+    console.error('Error en el ping:', error);
+    res.status(500).json({ status: 'error', message: error.message });
+  }
+});
+
 router.get('/', async function(req, res, next) {
   var servicios = await serviciosModel.getServicios();
   
