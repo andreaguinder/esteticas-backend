@@ -43,7 +43,7 @@ Acceso protegido mediante autenticación de usuario (`/admin/login`) que permite
 ### 2. API REST (Endpoints Públicos)
 * `GET /api`: Retorna la lista completa de servicios en formato JSON con la URL formateada de las imágenes en Cloudinary.
 * `GET /api/ping`: Endpoint ligero de verificación de estado que ejecuta una consulta en MySQL para mantener despiertas las instancias gratuitas de Render y Aiven.
-* `POST /api/contacto`: Recibe las consultas enviadas desde el formulario frontend y las procesa enviando un correo electrónico formateado mediante **Nodemailer**.
+* `POST /api/contacto`: Recibe las consultas enviadas desde el formulario frontend y las procesa enviando un correo electrónico formateado mediante **Nodemailer** e integrado con **Mailtrap**.
 
 ---
 
